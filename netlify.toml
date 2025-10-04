@@ -1,6 +1,10 @@
 [build]
   command = "npm run build"
+ codex/integrate-boujeebot-chat-widget-y2x5i4
   publish = "out"
+
+  publish = ".next"
+ main
 
 [build.environment]
   NETLIFY_SKIP_INSTALL_PLUGINS = "true"
