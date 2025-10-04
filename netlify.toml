@@ -1,4 +1,5 @@
 [build]
+ codex/integrate-boujeebot-chat-widget-3v7gj8
 command = "npm run build"
 publish = "out"
 
@@ -8,3 +9,14 @@ NETLIFY_SKIP_INSTALL_PLUGINS = "true"
 [functions]
 directory = "netlify/functions"
 node_bundler = "esbuild"
+
+  command = "npm run build"
+ codex/integrate-boujeebot-chat-widget-y2x5i4
+  publish = "out"
+
+  publish = ".next"
+ main
+
+[build.environment]
+  NETLIFY_SKIP_INSTALL_PLUGINS = "true"
+ main
