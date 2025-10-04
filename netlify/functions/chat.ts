@@ -41,7 +41,7 @@ export const handler = async (event: NetlifyEvent): Promise<NetlifyResponse> => 
     }
 
     const body = {
-      model: "gpt-5.1-mini",
+      model: "gpt-4o-mini",
       messages: [
         { role: "system", content: SYSTEM_PROMPT },
         lead ? { role: "system", content: `Lead context: ${JSON.stringify(lead)}` } : null,
