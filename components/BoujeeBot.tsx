@@ -40,7 +40,7 @@ export default function BoujeeBot() {
   const waLink = useMemo(() => {
     if (!lead.whatsapp) return null;
     const pre = encodeURIComponent(
-      `Hi Ahmed, I shared my details with BoujeeBot. Name: ${lead.name || """"}, Dates: ${lead.trip?.dates || ""}, Pax: ${lead.trip?.pax || ""}, Interests: ${(lead.trip?.interests||[]).join(", ")}`
+      `Hi Ahmed, I shared my details with BoujeeBot. Name: ${lead.name || ""}, Dates: ${lead.trip?.dates || ""}, Pax: ${lead.trip?.pax || ""}, Interests: ${(lead.trip?.interests||[]).join(", ")}`
     );
     return `https://wa.me/${whatsappBusiness}?text=${pre}`;
   }, [lead.whatsapp, lead.name, lead.trip, whatsappBusiness]);
