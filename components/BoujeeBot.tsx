@@ -41,14 +41,20 @@ export default function BoujeeBot() {
   }, [messages, open]);
 
   const whatsappBusiness = process.env.NEXT_PUBLIC_WHATSAPP_BUSINESS || "";
+ codex/integrate-boujeebot-chat-widget-3v7gj8
+
  codex/integrate-boujeebot-chat-widget-y2x5i4
+ main
   const chatEndpoint =
     process.env.NEXT_PUBLIC_CHAT_ENDPOINT || "/.netlify/functions/chat";
   const leadEndpoint =
     process.env.NEXT_PUBLIC_LEAD_ENDPOINT || "/.netlify/functions/lead";
 
+ codex/integrate-boujeebot-chat-widget-3v7gj8
+
  main
 
+ main
   const waLink = useMemo(() => {
     if (!lead.whatsapp) return null;
 
@@ -66,20 +72,30 @@ export default function BoujeeBot() {
     setLoading(true);
 
     try {
+ codex/integrate-boujeebot-chat-widget-3v7gj8
+      const r = await fetch(chatEndpoint, {
+
  codex/integrate-boujeebot-chat-widget-y2x5i4
       const r = await fetch(chatEndpoint, {
 
       const r = await fetch("/api/chat", {
  main
+ main
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: [...messages, userMsg], lead }),
       });
+ codex/integrate-boujeebot-chat-widget-3v7gj8
+      if (!r.ok) {
+        throw new Error("Chat request failed");
+      }
+
  codex/integrate-boujeebot-chat-widget-y2x5i4
       if (!r.ok) {
         throw new Error("Chat request failed");
       }
 
+ main
  main
       const data = await r.json();
       const reply: ChatMessage = {
@@ -100,22 +116,32 @@ export default function BoujeeBot() {
   async function submitLead() {
     try {
       const payload = { ...lead, collectedAt: new Date().toISOString() };
+ codex/integrate-boujeebot-chat-widget-3v7gj8
+      const r = await fetch(leadEndpoint, {
+
  codex/integrate-boujeebot-chat-widget-y2x5i4
       const r = await fetch(leadEndpoint, {
 
       await fetch("/api/lead", {
  main
+ main
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
+ codex/integrate-boujeebot-chat-widget-3v7gj8
+
  codex/integrate-boujeebot-chat-widget-y2x5i4
+ main
       if (!r.ok) {
         throw new Error("Lead request failed");
       }
 
+ codex/integrate-boujeebot-chat-widget-3v7gj8
+
  main
 
+ main
       setMessages((m) => [
         ...m,
         {
