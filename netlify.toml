@@ -1,0 +1,10 @@
+[build]
+command = "npm run build"
+publish = "out"
+
+[build.environment]
+NETLIFY_SKIP_INSTALL_PLUGINS = "true"
+
+[functions]
+directory = "netlify/functions"
+node_bundler = "esbuild"
